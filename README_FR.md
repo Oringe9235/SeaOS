@@ -1,6 +1,6 @@
 > # SeaOS
 
-**Languages: ** [ENGLISH](README_EN.md) | [中文](README.md) | FRANCH
+**Languages:** [ENGLISH](README_EN.md) | [中文](README.md) | FRANCH
 
 ## Description
 
