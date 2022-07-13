@@ -15,5 +15,4 @@ start:
     ret
 Massage: db 'SeaOS, was born!'
 times 510 - ($ - $$) db 0
-dw 0xaa55 
-
+dw 0xaa55
