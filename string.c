@@ -1,4 +1,4 @@
-#include "stringio.h"
+#include "strio.h"
 #define BUF_Len 32
 
 extern void clear();
