@@ -23,3 +23,6 @@ SeaOS，是一个多版本的操作系统，在第一周期内开发x86_32的版
 ## 特别说明
 
 `SeaOS`将在之后持续完善，欢迎更多人参加进来开发`SeaOS`，让`SeaOS`成长为我们新的选择
+
+**Developer List:**<br> <br>
+`John Paul Jones` | Email: x92352314@163.com
