@@ -3,6 +3,10 @@
 extern void printInPos(char* massage, uint16_t len, uint8_t row, uint8_t col);
 extern void putchar(char c);
 extern char getcommand();
+extern void clear();
+extern void shutdown();
+extern void about();
+extern void help();
 
 uint16_t strlen(char* str)
 {
