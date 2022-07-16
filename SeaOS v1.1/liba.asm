@@ -1,7 +1,10 @@
+
 bits 16
 [global printInPos]
 [global putchar]
-[gloabl getcommand]
+[global getcommand]
+[global clear]
+[global shutdown]
 
 getcommand:
     mov ah,0
@@ -37,3 +40,17 @@ printInPos:
     int 10h
     popa
     retf
+
+clear:
+    pusha
+    mov ax,0003h
+    int 10h
+    popa
+    retf
+
+shutdown:
+    mov ax,5307H
+    mov bx,0001H
+    mov cx,0003H
+    int 15h
+    
