@@ -41,7 +41,7 @@ void shell()
 	char* command[] = {"help","clear","time","shutdown","enterpm","about"};
     while(1)
     {
-		promptString();
+		promptstring();
 		readBuf(cmdStr,bufLen);
 		getFirstWord(cmdStr,cmdFirstWord);
 		if(strcmp(cmdFirstWord, command[clear]) == 0)
@@ -58,13 +58,13 @@ void shell()
 		}
 		else if(strcmp(cmdFirstWord, command[time]) == 0)
         {
-			times();
+			//times();
 		}
 		else if(strcmp(cmdFirstWord, command[enterpm]) == 0)
         {
-			callPM();
+			//callPM();
 		}
-        else if (strcmp(getFirstWord, command[about]) == 0)
+        else if (strcmp(cmdFirstWord, command[about]) == 0)
         {
             void about();
         }
@@ -75,8 +75,8 @@ void shell()
             {
 				char*errMsg = ": command not dound\r\n";
 
-				print(cmdFirstWord);
-				print(errMsg);
+				print_f(cmdFirstWord);
+				print_f(errMsg);
 			}
 		}
 	}
