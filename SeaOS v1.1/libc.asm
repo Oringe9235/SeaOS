@@ -1,6 +1,9 @@
 #include "stringio.h"
 #define bufLen 32
 
+extern void about();
+extern void help();
+
 void startUp()
 {
     char* title = "SeaOS vesion Beta 1.1";
@@ -21,7 +24,7 @@ void showHelp()
     char* help_str = 
     "Shell for SeaOS, Vesion Beta 1.1\r\n"
     "The shell for SeaOS, you can use 'help' to get more command\r\n\n"
-    "Command List:\r\n"
+    "Commands List:\r\n"
     "\rclear    -[clear the screen]\r\n"
     "\rtimes    -[get the time for now]\r\n"
     "\rshutdown -[shutdown the power]\r\n";
@@ -30,5 +33,51 @@ void showHelp()
 }
 void shell()
 {
+    clear();
+    showHelp();
+    char cmdStr[bufLen + 1] = {0};
+    char cmdFirstWord[bufLen + 1] = {0};
+	enum {help,clear,time,shutdown,enterpm,about};
+	char* command[] = {"help","clear","time","shutdown","enterpm","about"};
+    while(1)
+    {
+		promptString();
+		readBuf(cmdStr,bufLen);
+		getFirstWord(cmdStr,cmdFirstWord);
+		if(strcmp(cmdFirstWord, command[clear]) == 0)
+        {
+			void clear();
+		}
+		else if(strcmp(cmdFirstWord, command[help]) == 0)
+        {
+			showHelp();
+		}
+		else if(strcmp(cmdFirstWord, command[shutdown]) == 0)
+        {
+        	void shutdown();
+		}
+		else if(strcmp(cmdFirstWord, command[time]) == 0)
+        {
+			times();
+		}
+		else if(strcmp(cmdFirstWord, command[enterpm]) == 0)
+        {
+			callPM();
+		}
+        else if (strcmp(getFirstWord, command[about]) == 0)
+        {
+            void about();
+        }
+        
+		else
+        {
+			if(cmdFirstWord[0] != 0)
+            {
+				char*errMsg = ": command not dound\r\n";
 
+				print(cmdFirstWord);
+				print(errMsg);
+			}
+		}
+	}
 }
